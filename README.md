@@ -1,2 +1,2 @@
-# -algorithms-and-data-structures
+# algorithms-and-data-structures
 timus, itmo, fourth semester.
