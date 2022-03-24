@@ -1,33 +1,33 @@
 #include <cstdio>
 #include <map>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
-#define pb push_back
-#define sf scanf
-
 const int maxn = (int)4e5 + 7;
+int n, q, arr[maxn];
 
 
-int n, q, a[maxn];
-map < int, vector < int > > t;
+map < int, vector < int > > v;
 
 void solve(){
     for(int i = 1; i <= q; ++i){
         int l, r, x;
-        sf("%d %d %d", &l, &r, &x);
-        auto it = lower_bound(t[x].begin(), t[x].end(), l);
-        if(it != end(t[x]) && *it <= r)
-            putchar('1');
-        else
-            putchar('0');
+        cin>>l>>r>>x;
+        auto iterator = lower_bound(v[x].begin(), v[x].end(), l);
+        if(iterator != end(v[x]) and *iterator <= r){putc('1',stdout);}
+        else{putchar('0');}
     }
 }
 int main(){
-    sf("%d", &n);
-    for(int i = 1; i <= n; ++i){sf("%d", &a[i]), t[a[i]].pb(i);}
-    sf("%d", &q);
+    cin>>n;
+    int i=1;
+    while (i<=n){
+        scanf("%d", &arr[i]), v[arr[i]].push_back(i);
+        ++i;
+    }
+    cin>>q;
     solve();
     return 0;
 }
