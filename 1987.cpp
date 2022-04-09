@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include <stdio.h>
+
 
 #define MAX 100005
 
